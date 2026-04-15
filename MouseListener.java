@@ -15,4 +15,24 @@ public class MouseListener {
         }
         return instance;
     }
+
+    public double getX() {
+        return xPos;
+    }
+
+    public double getY() {
+        return yPos;
+    }
+
+    public double getScrollX() {
+        return scrollX;
+    }
+
+    public double getScrollY() {
+        return scrollY;
+    }
+
+    public boolean isDragging() {
+        return dragging;
+    }
 }
