@@ -6,12 +6,7 @@ public class MouseListener {
     private boolean isDragging;
 
     private MouseListener() {
-        this.scrollX = 0.0f;
-        this.scrollY = 0.0f;
-        this.xPos = 0.0f;
-        this.yPos = 0.0f;
-        this.lastX = 0.0f;
-        this.lastY = 0.0f;
+        // Valores já iniciam em 0 por padrão, então não precisa setar manualmente
     }
 
     public static MouseListener getInstance() {
