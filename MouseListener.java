@@ -1,3 +1,7 @@
+/**
+ * Classe responsável por gerenciar o estado do mouse.
+ * Implementa o padrão Singleton.
+ */
 public class MouseListener {
     private static MouseListener instance;
     private double scrollX, scrollY;
