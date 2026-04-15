@@ -35,4 +35,11 @@ public class MouseListener {
     public boolean isDragging() {
         return dragging;
     }
+
+    public boolean isMouseButtonPressed(int button) {
+        if (button < 0 || button >= mouseButtonsPressed.length) {
+            return false;
+        }
+        return mouseButtonsPressed[button];
+    }
 }
