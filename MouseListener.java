@@ -14,10 +14,10 @@ public class MouseListener {
         this.lastY = 0.0f;
     }
 
-    public static MouseListener get() {
-        if (MouseListener.instance == null) {
-            MouseListener.instance = new MouseListener();
+    public static MouseListener getInstance() {
+        if (instance == null) {
+            instance = new MouseListener();
         }
-        return MouseListener.instance;
+        return instance;
     }
 }
