@@ -1,3 +1,7 @@
+/**
+ * Classe responsável por gerenciar o estado do mouse.
+ * Implementa o padrão Singleton.
+ */
 public class MouseListener {
     private static MouseListener instance;
     private double scrollX, scrollY;
@@ -6,18 +10,40 @@ public class MouseListener {
     private boolean isDragging;
 
     private MouseListener() {
-        this.scrollX = 0.0f;
-        this.scrollY = 0.0f;
-        this.xPos = 0.0f;
-        this.yPos = 0.0f;
-        this.lastX = 0.0f;
-        this.lastY = 0.0f;
+        // Valores já iniciam em 0 por padrão, então não precisa setar manualmente
     }
 
-    public static MouseListener get() {
-        if (MouseListener.instance == null) {
-            MouseListener.instance = new MouseListener();
+    public static MouseListener getInstance() {
+        if (instance == null) {
+            instance = new MouseListener();
         }
-        return MouseListener.instance;
+        return instance;
+    }
+
+    public double getX() {
+        return xPos;
+    }
+
+    public double getY() {
+        return yPos;
+    }
+
+    public double getScrollX() {
+        return scrollX;
+    }
+
+    public double getScrollY() {
+        return scrollY;
+    }
+
+    public boolean isDragging() {
+        return dragging;
+    }
+
+    public boolean isMouseButtonPressed(int button) {
+        if (button < 0 || button >= mouseButtonsPressed.length) {
+            return false;
+        }
+        return mouseButtonsPressed[button];
     }
 }
